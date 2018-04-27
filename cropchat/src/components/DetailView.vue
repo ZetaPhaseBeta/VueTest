@@ -17,12 +17,27 @@
           ANSWER
         </router-link>
       </div>
+      <div class="input">
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="sample1" ref="sampletext">
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" v-on:click="post">
+            <i class="material-icons">done</i>
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import data from '../data'
 export default {
+  methods: {
+    post () {
+      console.log(this.$refs.sampletext.value)
+    }
+  },
   data () {
     return {
       'pictures': data.pictures
