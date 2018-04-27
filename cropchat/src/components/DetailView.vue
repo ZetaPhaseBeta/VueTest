@@ -18,11 +18,11 @@
         </router-link>
       </div>
       <div class="input">
-        <form action="#">
+        <form @submit.prevent="post">
           <div class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="sample1" ref="sampletext">
           </div>
-          <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" v-on:click="post">
+          <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" type="submit">
             <i class="material-icons">done</i>
           </button>
         </form>
@@ -43,7 +43,7 @@ export default {
       // formData.append('foo', 'bar')
       var formData = {'foo': 'bar'}
       this.$http.post('http://35.160.134.174/vue', formData).then(response => {
-        // success callback
+        console.log(response.body)
       }, response => {
         // error callback
       })
