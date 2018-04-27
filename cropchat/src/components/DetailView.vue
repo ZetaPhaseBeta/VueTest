@@ -32,10 +32,21 @@
 </template>
 <script>
 import data from '../data'
+import VueResource from 'vue-resource'
+import Vue from 'vue'
+Vue.use(VueResource)
 export default {
   methods: {
     post () {
       console.log(this.$refs.sampletext.value)
+      // var formData = new FormData()
+      // formData.append('foo', 'bar')
+      var formData = {'foo': 'bar'}
+      this.$http.post('http://35.160.134.174/vue', formData).then(response => {
+        // success callback
+      }, response => {
+        // error callback
+      })
     }
   },
   data () {
