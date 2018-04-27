@@ -41,7 +41,7 @@ export default {
       console.log(this.$refs.sampletext.value)
       // var formData = new FormData()
       // formData.append('foo', 'bar')
-      var formData = {'foo': 'bar'}
+      var formData = {'question': this.$refs.sampletext.value}
       this.$http.post('http://35.160.134.174/vue', formData).then(response => {
         console.log(response.body)
       }, response => {
